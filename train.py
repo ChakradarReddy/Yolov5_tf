@@ -228,7 +228,7 @@ class YoloTrain(object):
             train_epoch_loss, test_epoch_loss = np.mean(train_epoch_loss), np.mean(test_epoch_loss)
             train_epoch_loss = np.mean(train_epoch_loss)
             
-            ckpt_file = os.path.join(self.ckpt_path, 'social_%s_test-loss=%.4f.ckpt' % (self.net_type, test_epoch_loss))
+            ckpt_file = os.path.join(self.ckpt_path, 'best.ckpt')
             log_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             if saving == 0.0:
                 saving = train_epoch_loss
@@ -253,7 +253,7 @@ if __name__ == '__main__':
 
     """
     gpu_id = 0 #argv[1]
-    net_type = 'yolov3' #argv[2]
+    net_type = 'yolov5' #argv[2]
     print('train gpu_id=%s, net_type=%s' % (gpu_id, net_type))
 
     os.environ['CUDA_VISIBLE_DEVICES'] = str(gpu_id)
