@@ -153,7 +153,7 @@ def cspdarknet53(input_data, trainable, init_width_size, init_depth_size):
     
     # 4096x38x38 -> 1024x38x38
     input_data = conv(input_data, (1, 1, 64*init_width_size, 16*init_width_size), trainable=trainable, 
-                      name='conv%d' % (layer_num + 2), downsample=True, act_fun='mish')
+                      name='conv%d' % (layer_num + 2), downsample=False, act_fun='mish')
     last_layer_num = layer_num + 2
     return route_1, route_2, route_3, input_data, last_layer_num
 
