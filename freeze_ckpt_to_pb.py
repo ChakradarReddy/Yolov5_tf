@@ -21,8 +21,8 @@ if __name__ == "__main__":
         sys.exit()
     """
     gpu_id = '0' #argv[1]
-    net_type = 'yolov3' #argv[2]
-    ckpt_file = 'ckpts/social_yolov3_test-loss=3.2020.ckpt-198' #argv[3]
+    net_type = 'yolov5' #argv[2]
+    ckpt_file = '/content/Yolov5_tf/ckpts/best.ckpt-9' #argv[3]
     if not os.path.exists(ckpt_file + '.index'):
         print('freeze_ckpt_to_pb ckpt_file=', ckpt_file, ' not exist')
         sys.exit()
