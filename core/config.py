@@ -14,8 +14,8 @@ __C.YOLO = edict()
 
 # Set the class name
 __C.YOLO.NET_TYPE = 'darknet53' # 'darknet53' 'mobilenetv2' 'mobilenetv3' 'mobilenetv3_small'
-__C.YOLO.CLASSES = '/content/class.names'
-__C.YOLO.ANCHORS = '/content/anchor.txt' # yolov3/5 : yolo_anchors.txt; yolov4 : yolov4_anchors.txt
+__C.YOLO.CLASSES = 'class.names'
+__C.YOLO.ANCHORS = 'anchor.txt' # yolov3/5 : yolo_anchors.txt; yolov4 : yolov4_anchors.txt
 __C.YOLO.MOVING_AVE_DECAY = 0.9995
 __C.YOLO.STRIDES = [8, 16, 32]
 __C.YOLO.STRIDES_TINY = [16, 32]
@@ -26,14 +26,14 @@ __C.YOLO.UPSAMPLE_METHOD = 'resize'
 __C.YOLO.WIDTH_SCALE_V5 = 0.50 # yolov5 small:0.50 / middle:0.75 / large:1.00 / extend:1.25
 __C.YOLO.DEPTH_SCALE_V5 = 0.33 # yolov5 small:0.33(1/3) / middle:0.67(2/3) / large:1.00 / extend:1.33(4/3)
 
-__C.YOLO.ORIGINAL_WEIGHT = '/content/yolov5s6.pt'
+__C.YOLO.ORIGINAL_WEIGHT = '/Yolov5_tf/yolov5s6.pt'
 __C.YOLO.DEMO_WEIGHT = 'checkpoint/yolov3_coco_demo.ckpt'
 
 
 # Train options
 __C.TRAIN = edict()
 
-__C.TRAIN.ANNOT_PATH = '/content/train.txt'
+__C.TRAIN.ANNOT_PATH = 'train.txt'
 __C.TRAIN.BATCH_SIZE = 2 if __C.YOLO.NET_TYPE == 'darknet53' else 8
 __C.TRAIN.INPUT_SIZE = [320, 352, 384, 416, 448, 480, 512, 544, 576, 608] if not 'mobilenetv3' in __C.YOLO.NET_TYPE else [416]
 __C.TRAIN.DATA_AUG = True
@@ -49,7 +49,7 @@ __C.TRAIN.CKPT_PATH = 'ckpts'
 # TEST options
 __C.TEST = edict()
 
-__C.TEST.ANNOT_PATH = '/content/val.txt'
+__C.TEST.ANNOT_PATH = 'val.txt'
 __C.TEST.BATCH_SIZE = 1
 __C.TEST.INPUT_SIZE = 416
 __C.TEST.DATA_AUG = False
